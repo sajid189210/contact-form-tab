@@ -17,7 +17,6 @@ The implementation focuses on:
 ## ✨ Features
 
 - Create multiple contacts
-- Delete any contact
 - Reactive form implementation
 - Required field validation
 - Email format validation
@@ -44,9 +43,9 @@ Each contact contains the following fields:
 | Field Name   | Required | Validation |
 |-------------|----------|------------|
 | First Name  | Yes      | Required |
-| Last Name   | Yes      | Required |
+| Last Name   | No       | No|
 | Email       | Yes      | Required, Email format |
-| Phone       | Yes      | Required, US phone mask |
+| Phone       | No       |  US phone mask |
 
 ---
 
