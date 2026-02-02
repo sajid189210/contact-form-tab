@@ -1,59 +1,82 @@
-# ContactFormTab
+# Contact Form Tab Component (Angular)
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.0.
+## 📌 Project Overview
 
-## Development server
+This project is a **custom contact form tab component** built using **Angular Reactive Forms**.  
+It allows users to create multiple contacts, view them dynamically, and delete any contact.  
+All data is handled **client-side** with no backend dependency.
 
-To start a local development server, run:
+The implementation focuses on:
+- Clean reactive form handling
+- Proper form validation
+- US phone number masking
+- Dynamic contact management
 
-```bash
-ng serve
-```
+---
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## ✨ Features
 
-## Code scaffolding
+- Create multiple contacts
+- Delete any contact
+- Reactive form implementation
+- Required field validation
+- Email format validation
+- US phone number masking `(123) 111-2222`
+- Dynamic UI updates
+- No backend required
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+---
 
-```bash
-ng generate component component-name
-```
+## 🧱 Tech Stack
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+- **Angular**
+- **TypeScript**
+- **Reactive Forms**
+- **Third-party phone mask library** (e.g., `ngx-mask`)
+- HTML & CSS
 
-```bash
-ng generate --help
-```
+---
 
-## Building
+## 📋 Contact Fields
 
-To build the project run:
+Each contact contains the following fields:
 
-```bash
-ng build
-```
+| Field Name   | Required | Validation |
+|-------------|----------|------------|
+| First Name  | Yes      | Required |
+| Last Name   | Yes      | Required |
+| Email       | Yes      | Required, Email format |
+| Phone       | Yes      | Required, US phone mask |
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+---
 
-## Running unit tests
+## 📞 Phone Number Masking
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+The phone number input follows the **US format**:
 
-```bash
-ng test
-```
 
-## Running end-to-end tests
+Masking is implemented using a third-party Angular masking library.
 
-For end-to-end (e2e) testing, run:
+---
 
-```bash
-ng e2e
-```
+## 📂 Output Format
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+The collected contact data is stored in-memory and structured as follows:
 
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+```json
+{
+  "contacts": [
+    {
+      "first_name": "John",
+      "last_name": "Doe",
+      "email": "john.doe@yopmail.com",
+      "phone": "(123) 111-2222"
+    },
+    {
+      "first_name": "John",
+      "last_name": "Doe",
+      "email": "john.doe@yopmail.com",
+      "phone": "(123) 111-2222"
+    }
+  ]
+}
