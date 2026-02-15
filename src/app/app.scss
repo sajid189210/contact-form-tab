@@ -9,159 +9,39 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #f5f5f5;
 }
 
-.contact-page {
+.container {
   width: 60rem;
+  max-width: 95%;
   border: 1px solid #ddd;
   background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 80vh;
 }
 
-/* ---------- Tabs Header ---------- */
-
-.tabs-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: #f3f3f3;
-  border-bottom: 1px solid #ccc;
+.status-bar {
   padding: 0.5rem 1rem;
-}
-
-.tabs {
-  overflow-x: auto;
+  background-color: #fff3f3;
+  color: #d32f2f;
+  font-size: 0.9rem;
+  border-bottom: 1px solid #ffebee;
   display: flex;
-  gap: 0.5rem;
-  overflow-x: auto;
-  overflow-y: hidden;
+  align-items: center;
+  gap: 10px;
 
-  white-space: nowrap;
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
-
-  padding-bottom: 4px;
+  p {
+    margin: 0;
+  }
 }
-
-.tab {
-  flex: 0 0 auto;
-  padding: 0.4rem 0.8rem;
-  background: #e0e0e0;
-  border-radius: 3px;
-  font-size: 0.85rem;
-  cursor: pointer;
-  white-space: nowrap;
-}
-
-.tab.disable {
-  opacity: 0.5;
-  cursor: default;
-}
-
-.tab.active {
-  background: #ffffff;
-  border: 1px solid #ccc;
-}
-
-.add-contact-btn {
-  background: #1e3a8a;
-  color: white;
-  border: none;
-  padding: 0.4rem 0.8rem;
-  font-size: 0.8rem;
-  cursor: pointer;
-  border-radius: 3px;
-}
-
-.tabs::-webkit-scrollbar {
-  height: 6px;
-}
-
-.tabs::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.tabs::-webkit-scrollbar-thumb {
-  background-color: rgba(0, 0, 0, 0.2);
-  border-radius: 999px;
-}
-
-.tabs::-webkit-scrollbar-thumb:hover {
-  background-color: rgba(0, 0, 0, 0.35);
-}
-
-/* ---------- Content Area ---------- */
 
 .content-area {
-  padding: 1.5rem;
-}
-
-/* ---------- Form ---------- */
-
-.contact-form {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  min-height: 18rem;
-}
-
-.form-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem 2.5rem;
-  max-width: 600px;
-}
-
-.form-field {
-  display: flex;
-  flex-direction: column;
-  gap: 0.3rem;
-}
-
-label {
-  font-size: 0.75rem;
-  font-weight: 600;
-  color: #333;
-}
-
-input {
-  padding: 0.3rem 0.4rem;
-  border: 1px solid #ccc;
-  border-radius: 2px;
-}
-
-/* ---------- Footer ---------- */
-
-.form-actions {
-  margin-top: auto;
-  display: flex;
-  justify-content: flex-end;
-}
-
-.save-btn {
-  background: #1e3a8a;
-  color: white;
-  border: none;
-  padding: 0.4rem 1.8rem;
-  font-size: 0.8rem;
-  cursor: pointer;
-  border-radius: 3px;
-  flex: 0 0 auto;
-}
-
-input.invalid {
-  border: 1px solid #dc2626;
-  background-color: #fef2f2;
-}
-
-label.invalid {
-  color: #dc2626;
-}
-
-input.valid {
-  border: 1px solid #22c55e;
-  background-color: #f0fdf4;
-}
-
-label.valid {
-  color: #16a34a;
+  padding: 2rem;
+  // overflow-y: auto;
+  flex: 1;
 }

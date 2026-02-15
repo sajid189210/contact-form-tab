@@ -1,0 +1,100 @@
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding-top: 20px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    /* Reduced from 2rem to match screenshot tightness */
+    margin-bottom: 2rem;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+    label {
+        font-size: 0.9rem;
+        color: #666;
+        font-weight: 400;
+        /* Lighter font weight */
+
+        .required {
+            color: #d32f2f;
+            margin-left: 2px;
+        }
+    }
+
+    input {
+        width: 100%;
+        padding: 10px 12px;
+        background-color: #f9f9f9;
+        /* Light grey background */
+        border: 1px solid #eee;
+        /* Very subtle border */
+        border-radius: 4px;
+        font-size: 0.95rem;
+        color: #333;
+        transition: all 0.2s;
+        box-sizing: border-box;
+
+        &:focus {
+            outline: none;
+            background-color: #fff;
+            border-color: #ddd;
+            box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.05);
+        }
+
+        &.error {
+            border-color: #d32f2f;
+            background-color: #fff5f5;
+        }
+    }
+
+    .error-msg {
+        color: #d32f2f;
+        font-size: 0.8rem;
+        margin-top: 2px;
+    }
+}
+
+.form-actions {
+    margin-top: auto;
+    /* Push to bottom if container has height */
+    display: flex;
+    justify-content: flex-end;
+    /* Align right */
+    padding-top: 20px;
+    border-top: 1px solid activeborder;
+    /* Optional: separator line? Screenshot doesn't show clearly but adds structure */
+    border-top: 1px solid transparent;
+    /* Hidden for now unless needed */
+
+    button {
+        padding: 8px 24px;
+        background-color: #0d1b54;
+        /* Dark blue */
+        color: white;
+        border: none;
+        border-radius: 4px;
+        font-size: 0.9rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: background-color 0.2s;
+        min-width: 100px;
+
+        &:hover:not(:disabled) {
+            background-color: #08123b;
+        }
+
+        &:disabled {
+            background-color: #BDBDBD;
+            cursor: not-allowed;
+        }
+    }
+}

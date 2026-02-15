@@ -1,48 +1,16 @@
 <main>
-  <div class="contact-page">
-    <!-- Tabs Header -->
-    <div class="tabs-header">
-      <div class="tabs">
-        <div *ngIf="!headTabs.length" class="tab disable">Add Contact</div>
-        <ng-container *ngFor="let tab of headTabs;">
-          <button class="tab" [class.active]="tab.active" (click)="selectTab(tab.index)">{{ tab.label }}</button>
-        </ng-container>
-      </div>
-
-      <button class="add-contact-btn" (click)="newContact()">+ Add Contact</button>
+  <div class="container">
+    <div class="status-bar" *ngIf="loading() || error()">
+      <p *ngIf="loading()">Loading...</p>
+      <p *ngIf="error()" class="error-msg">{{ error() }}</p>
     </div>
 
-    <!-- Form Content -->
+    <app-header-tabs [tabs]="tabs()" (tabSelected)="onTabSelected($event)" (addNew)="onAddNew()"
+      (deleteTab)="onDeleteTab($event)"></app-header-tabs>
+
     <div class="content-area">
-      <form [formGroup]="contactForm" class="contact-form" (submit)="submitForm()">
-        <div class="form-grid">
-          <div class="form-field">
-            <label>First Name *</label>
-            <input type="text" formControlName="firstName" [ngClass]="{'invalid': hasFirstNameError}" />
-          </div>
-
-          <div class="form-field">
-            <label>Last Name</label>
-            <input type="text" formControlName="lastName" />
-          </div>
-
-          <div class="form-field">
-            <label>Email *</label>
-            <input type="email" formControlName="email" [ngClass]="{'invalid': hasEmailError}" />
-          </div>
-
-          <div class="form-field">
-            <label>Phone</label>
-            <input type="text" formControlName="phone" mask="(000) 000-0000" inputmode="numeric" autocomplete="tel"
-              [ngClass]="{ invalid: hasPhoneError }" />
-          </div>
-        </div>
-
-        <!-- Footer Actions -->
-        <div class="form-actions">
-          <button type="submit" class="save-btn">Save</button>
-        </div>
-      </form>
+      <app-contact-form [data]="selectedContactData()" [loading]="loading()"
+        (formSubmit)="onFormSubmit($event)"></app-contact-form>
     </div>
   </div>
 </main>
