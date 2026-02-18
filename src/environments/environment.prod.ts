@@ -1,4 +1,4 @@
 export const environment = {
     production: true,
-    apiUrl: 'api.contact-forms.msajid.space/api'
+    apiUrl: 'https://api.contact-forms.msajid.space/api'
 };
